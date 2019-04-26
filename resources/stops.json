@@ -1,0 +1,37 @@
+[
+  {
+    "StopPointName": "Lal Bangla (Cg Road)",
+    "Location": {
+      "Longitude": 72.557883,
+      "Latitude": 23.028221
+    }
+  },
+  {
+    "StopPointName": "The Arena (Abad Dairy)",
+    "Location": {
+      "Longitude": 72.599133,
+      "Latitude": 23.009843
+    }
+  },
+  {
+    "StopPointName": "Mukteshwar Mahadev",
+    "Location": {
+      "Longitude": 72.46547,
+      "Latitude": 22.95005
+    }
+  },
+  {
+    "StopPointName": "Radhanpur Society",
+    "Location": {
+      "Longitude": 72.59744,
+      "Latitude": 22.998378
+    }
+  },
+  {
+    "StopPointName": "Alok Residency",
+    "Location": {
+      "Longitude": 72.55934,
+      "Latitude": 23.09253
+    }
+  }
+]
