@@ -22,24 +22,23 @@ func main() {
 	initServer(r)
 }
 
-type Somewhere struct {
+type RTreePoint struct {
 	location rtreego.Point
 	name     string
-	wormhole chan int
 }
 
 const tol = 0.01
 
-func (s *Somewhere) Bounds() *rtreego.Rect {
+func (s *RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
 }
 
 func createLatLngTree() *rtreego.Rtree {
 	rt := rtreego.NewTree(2, 25, 50)
-	rt.Insert(&Somewhere{rtreego.Point{0, 0}, "Someplace 0 0", nil})
-	rt.Insert(&Somewhere{rtreego.Point{1, 1}, "Someplace 1 1", nil})
-	rt.Insert(&Somewhere{rtreego.Point{1, 0}, "Someplace 1 0", nil})
-	rt.Insert(&Somewhere{rtreego.Point{0, 1}, "Someplace 0 1", nil})
+	rt.Insert(&RTreePoint{rtreego.Point{0, 0}, "Someplace 0 0"})
+	rt.Insert(&RTreePoint{rtreego.Point{1, 1}, "Someplace 1 1"})
+	rt.Insert(&RTreePoint{rtreego.Point{1, 0}, "Someplace 1 0"})
+	rt.Insert(&RTreePoint{rtreego.Point{0, 1}, "Someplace 0 1"})
 	return rt
 }
 
@@ -78,12 +77,9 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree) http.HandlerFunc {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
-		w.WriteHeader(http.StatusInternalServerError)
+		results := rt.NearestNeighbors(2, rtreego.Point{lat, lng})
 		data, err := json.Marshal(map[string]int{
-			"totalsize": len(stops),
-			"rtreesize": rt.Size(),
-			"lat":       int(lat),
-			"lng":       int(lng),
+			"results": len(results),
 		})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
