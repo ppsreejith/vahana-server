@@ -77,12 +77,12 @@ func GetLatLngFromParams(latlngStr string) (error, float64, float64) {
 	return nil, lat, lng
 }
 
-func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap) []RTreePoint {
+func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap) []Stop {
 	results := rt.NearestNeighbors(5, point)
-	var resultPoints []RTreePoint
+	var resultPoints []Stop
 	for _, result := range results {
 		rect := result.Bounds()
-		resultPoints = append(resultPoints, pointsMap[rect.String()])
+		resultPoints = append(resultPoints, pointsMap[rect.String()].stop)
 	}
 	return resultPoints
 }
@@ -109,11 +109,9 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap) http
 		toPoint := rtreego.Point{lat2, lng2}
 		fromStops := GetNearestStops(rt, fromPoint, pointsMap)
 		toStops := GetNearestStops(rt, toPoint, pointsMap)
-		data, err := json.Marshal(map[string]Stop{
-			"from stop 1": fromStops[0].stop,
-			"from stop 2": fromStops[1].stop,
-			"to stop 1":   toStops[0].stop,
-			"to stop 2":   toStops[1].stop,
+		data, err := json.Marshal(map[string][]Stop{
+			"from stops": fromStops,
+			"to stops":   toStops,
 		})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
