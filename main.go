@@ -52,7 +52,7 @@ func createLatLngTree(stops []Stop) (*rtreego.Rtree, PointsMap) {
 
 func initServer(r *mux.Router) {
 	srv := &http.Server{
-		Addr:         "0.0.0.0:8080",
+		Addr:         "0.0.0.0:9999",
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
