@@ -21,8 +21,9 @@ type PointsMap = map[string]RTreePoint
 func main() {
 	r := mux.NewRouter()
 	stops := LoadStops("./resources/stops.json")
+	route := LoadPaths("./resources/to-graph.json")
 	rt, pointsMap := createLatLngTree(stops)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stops, rt, pointsMap))
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stops, rt, pointsMap, route))
 	initServer(r)
 }
 
@@ -100,8 +101,9 @@ func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap
 	return stops
 }
 
-func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap) http.HandlerFunc {
+func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, route Route) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		params := mux.Vars(r)
 		latlngStr := params["latlng1"]
 		if latlngStr == "" {
@@ -145,6 +147,14 @@ type Stop struct {
 	Location Position `json:"Location"`
 }
 
+type RoutePath struct {
+	RouteCode string  `json:"route_code"`
+	Distance  float64 `json:"distance"`
+}
+
+type RouteMap map[string][]RoutePath
+type Route map[string]RouteMap
+
 func (fromStop Stop) GetDistance(lat, lng float64) float64 {
 	return disfun.HaversineLatLon(
 		fromStop.Location.Latitude,
@@ -155,13 +165,25 @@ func (fromStop Stop) GetDistance(lat, lng float64) float64 {
 }
 
 func LoadStops(file string) []Stop {
-	var stops []Stop
 	configFile, err := os.Open(file)
 	defer configFile.Close()
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 	jsonParser := json.NewDecoder(configFile)
+	var stops []Stop
 	jsonParser.Decode(&stops)
 	return stops
+}
+
+func LoadPaths(file string) Route {
+	configFile, err := os.Open(file)
+	defer configFile.Close()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	var route Route
+	jsonParser := json.NewDecoder(configFile)
+	jsonParser.Decode(&route)
+	return route
 }
