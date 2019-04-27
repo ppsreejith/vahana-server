@@ -80,9 +80,14 @@ func GetLatLngFromParams(latlngStr string) (error, float64, float64) {
 func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap) []Stop {
 	results := rt.NearestNeighbors(5, point)
 	var resultPoints []Stop
+	cache := make(map[string]bool)
 	for _, result := range results {
-		rect := result.Bounds()
-		resultPoints = append(resultPoints, pointsMap[rect.String()].stop)
+		stop := pointsMap[result.Bounds().String()].stop
+		_, ok := cache[stop.Name]
+		if !ok {
+			cache[stop.Name] = true
+			resultPoints = append(resultPoints, stop)
+		}
 	}
 	return resultPoints
 }
