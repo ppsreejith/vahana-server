@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/dhconnelly/rtreego"
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/jbowles/disfun"
 )
@@ -59,7 +60,7 @@ func initServer(r *mux.Router) {
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
-		Handler:      r,
+		Handler:      handlers.CORS()(r),
 	}
 	if err := srv.ListenAndServe(); err != nil {
 		log.Println(err)
