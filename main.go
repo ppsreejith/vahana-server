@@ -14,11 +14,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
+type PointsMap = map[string]RTreePoint
+
 func main() {
 	r := mux.NewRouter()
 	stops := LoadStops("./resources/stops.json")
-	rt := createLatLngTree()
-	r.HandleFunc("/routes/{latlng}", GetRoutesHandler(stops, rt))
+	rt, pointsMap := createLatLngTree(stops)
+	r.HandleFunc("/routes/{latlng}", GetRoutesHandler(stops, rt, pointsMap))
 	initServer(r)
 }
 
@@ -27,19 +29,28 @@ type RTreePoint struct {
 	name     string
 }
 
-const tol = 0.01
+const tol = 2
 
-func (s *RTreePoint) Bounds() *rtreego.Rect {
+func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
 }
 
-func createLatLngTree() *rtreego.Rtree {
+func createLatLngTree(stops []Stop) (*rtreego.Rtree, PointsMap) {
 	rt := rtreego.NewTree(2, 25, 50)
-	rt.Insert(&RTreePoint{rtreego.Point{0, 0}, "Someplace 0 0"})
-	rt.Insert(&RTreePoint{rtreego.Point{1, 1}, "Someplace 1 1"})
-	rt.Insert(&RTreePoint{rtreego.Point{1, 0}, "Someplace 1 0"})
-	rt.Insert(&RTreePoint{rtreego.Point{0, 1}, "Someplace 0 1"})
-	return rt
+	points := []RTreePoint{}
+	for _, stop := range stops {
+		points = append(points, RTreePoint{rtreego.Point{stop.Location.Latitude, stop.Location.Longitude}, stop.Name})
+	}
+	// RTreePoint{rtreego.Point{0, 0}, "Someplace 0 0"},
+	// RTreePoint{rtreego.Point{1, 0}, "Someplace 1 0"},
+	// RTreePoint{rtreego.Point{1, 1}, "Someplace 1 1"},
+	// RTreePoint{rtreego.Point{0, 1}, "Someplace 0 1"},
+	pointsMap := make(PointsMap)
+	for _, point := range points {
+		pointsMap[point.location.ToRect(tol).String()] = point
+		rt.Insert(point)
+	}
+	return rt, pointsMap
 }
 
 func initServer(r *mux.Router) {
@@ -56,7 +67,7 @@ func initServer(r *mux.Router) {
 	}
 }
 
-func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree) http.HandlerFunc {
+func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
 		latlngStr := params["latlng"]
@@ -77,9 +88,16 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree) http.HandlerFunc {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
-		results := rt.NearestNeighbors(2, rtreego.Point{lat, lng})
-		data, err := json.Marshal(map[string]int{
-			"results": len(results),
+		results := rt.NearestNeighbors(3, rtreego.Point{lat, lng})
+		var resultPoints []RTreePoint
+		for _, result := range results {
+			rect := result.Bounds()
+			resultPoints = append(resultPoints, pointsMap[rect.String()])
+		}
+		data, err := json.Marshal(map[string]string{
+			"closes point 1": resultPoints[0].name,
+			"closes point 2": resultPoints[1].name,
+			"closes point 3": resultPoints[2].name,
 		})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
