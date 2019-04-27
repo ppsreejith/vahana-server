@@ -102,6 +102,76 @@ func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap
 	return stops
 }
 
+func GetDoubleRouteWholeSigment(fromStop, toStop Stop, routeMap Route) []RouteSegment {
+	neighborsMap, ok := routeMap[fromStop.Name]
+	var routeSegments []RouteSegment
+	if !ok {
+		return routeSegments
+	}
+	paths, ok := neighborsMap[toStop.Name]
+	if !ok {
+		return routeSegments
+	}
+	for _, path := range paths {
+		routeSegments = append(routeSegments, RouteSegment{
+			FromStop:  fromStop,
+			ToStop:    toStop,
+			RoutePath: path,
+		})
+	}
+	return routeSegments
+}
+
+func GetSingleRouteWholeSigment(fromStop, toStop Stop, routeMap Route) []RouteSegment {
+	neighborsMap, ok := routeMap[fromStop.Name]
+	var routeSegments []RouteSegment
+	if !ok {
+		return routeSegments
+	}
+	paths, ok := neighborsMap[toStop.Name]
+	if !ok {
+		return routeSegments
+	}
+	for _, path := range paths {
+		routeSegments = append(routeSegments, RouteSegment{
+			FromStop:  fromStop,
+			ToStop:    toStop,
+			RoutePath: path,
+		})
+	}
+	return routeSegments
+}
+
+func GetRouteSegments(segment RouteSegment) []RouteSegment {
+	return []RouteSegment{segment}
+}
+
+func GetRouteJourneys(fromStops, toStops []Stop, routeMap Route) []RouteJourney {
+	routeJourneys := []RouteJourney{}
+	for _, fromStop := range fromStops {
+		for _, toStop := range toStops {
+			routeWholeSegments := GetSingleRouteWholeSigment(fromStop, toStop, routeMap)
+			if len(routeWholeSegments) > 0 {
+				for _, routeWholeSegment := range routeWholeSegments {
+					routeJourneys = append(routeJourneys, RouteJourney{
+						Segments: GetRouteSegments(routeWholeSegment),
+					})
+				}
+				continue
+			}
+			routeWholeSegments = GetDoubleRouteWholeSigment(fromStop, toStop, routeMap)
+			if len(routeWholeSegments) > 0 {
+				for _, routeWholeSegment := range routeWholeSegments {
+					routeJourneys = append(routeJourneys, RouteJourney{
+						Segments: GetRouteSegments(routeWholeSegment),
+					})
+				}
+			}
+		}
+	}
+	return routeJourneys
+}
+
 func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, routeMap Route) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -130,9 +200,9 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, rout
 		toPoint := rtreego.Point{lat2, lng2}
 		fromStops := GetNearestStops(rt, fromPoint, pointsMap)
 		toStops := GetNearestStops(rt, toPoint, pointsMap)
-		data, err := json.Marshal(map[string][]Stop{
-			"from stops": fromStops,
-			"to stops":   toStops,
+		routes := GetRouteJourneys(fromStops, toStops, routeMap)
+		data, err := json.Marshal(map[string][]RouteJourney{
+			"journeys": routes,
 		})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -156,6 +226,18 @@ type Stop struct {
 type RoutePath struct {
 	RouteCode string  `json:"route_code"`
 	Distance  float64 `json:"distance"`
+}
+
+type RouteSegment struct {
+	FromStop  Stop
+	ToStop    Stop
+	RoutePath RoutePath
+}
+
+type RouteJourney struct {
+	Segments            []RouteSegment
+	TotalDistance       float64
+	OverallComfortLevel float64
 }
 
 type RouteMap map[string][]RoutePath
