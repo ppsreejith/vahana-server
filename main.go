@@ -29,7 +29,8 @@ type RTreePoint struct {
 	stop     Stop
 }
 
-const tol = 0.000001
+const tol = 0.001
+const MAX_STOPS = 10
 
 func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
@@ -78,18 +79,18 @@ func GetLatLngFromParams(latlngStr string) (error, float64, float64) {
 }
 
 func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap) []Stop {
-	results := rt.NearestNeighbors(5, point)
-	var resultPoints []Stop
+	results := rt.NearestNeighbors(MAX_STOPS, point)
+	var stops []Stop
 	cache := make(map[string]bool)
 	for _, result := range results {
 		stop := pointsMap[result.Bounds().String()].stop
 		_, ok := cache[stop.Name]
 		if !ok {
 			cache[stop.Name] = true
-			resultPoints = append(resultPoints, stop)
+			stops = append(stops, stop)
 		}
 	}
-	return resultPoints
+	return stops
 }
 
 func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap) http.HandlerFunc {
