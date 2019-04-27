@@ -1,263 +1,1829 @@
 {
-  "582503298842495365": "DCIS Circle",
-  "582787093101544546": "Maninagar",
-  "582782630630523971": "R.T.O Circle",
-  "582503273072691236": "DCIS Circle",
-  "582778150979634216": "Ghuma Gam",
-  "582773722868352019": "R.T.O Circle",
-  "582750461325476770": "Gota Cross Road",
-  "582503410511646933": "Maninagar",
-  "582503436281451135": "R.T.O Circle",
-  "582783558343459914": "Science City Approach",
-  "582503273072691216": "Maninagar",
-  "582784816768877650": "R.T.O Circle",
-  "582503414806614258": "Maninagar",
-  "582788252742714472": "DCIS Circle",
-  "582783639947838539": "Ghuma Gam",
-  "582780865398965305": "Maninagar",
-  "582782394407322689": "R.T.O Circle",
-  "582732783240086360": "LD Engg. College",
-  "582503552245569697": "CTM Cross Road",
-  "582503324612299583": "Kashiram Textiles",
-  "582781350730269756": "DCIS Circle",
-  "582503715454329361": "DCIS Circle",
-  "582780221153870903": "Maninagar",
-  "582785443834102871": "Maninagar",
-  "582788196908139623": "Narol",
-  "582778580476363819": "Maninagar",
-  "582503749814068172": "R.T.O Circle",
-  "582787337914680419": "Naroda Gam",
-  "582503243007919602": "Narol",
-  "582503431986483778": "SP Ring Road Approach",
-  "582784795294041169": "R.T.O Circle",
-  "582503741224133506": "R.T.O Circle",
-  "582503736929166123": "R.T.O Circle",
-  "582775256171676701": "Maninagar",
-  "582503552245569761": "CTM Cross Road",
-  "582780182499165238": "DCIS Circle",
-  "582503646734851590": "Maninagar",
-  "582783017177580614": "R.T.O Circle",
-  "582503530770732927": "CTM Cross Road",
-  "582784005020058701": "LD Engg. College",
-  "582774586156778522": "Science City Approach",
-  "582788287102452841": "CTM Cross Road",
-  "582503294547528001": "Narol",
-  "582772674896331790": "Maninagar",
-  "582503792763741719": "R.T.O Circle",
-  "582782677875164228": "SP Ring Road Approach",
-  "582503247302886962": "Narol",
-  "582786238403052639": "R.T.O Circle",
-  "582781711507522622": "Maninagar",
-  "582503784173807008": "R.T.O Circle",
-  "582773456580379666": "R.T.O Circle",
-  "582503543655635029": "CTM Cross Road",
-  "582788141073564773": "Vasna",
-  "582503505000928818": "Naroda Gam",
-  "582781651377980477": "Gota Cross Road",
-  "582779349275509807": "Naroda Gam",
-  "582785929165407324": "Maninagar",
-  "582768371339101173": "Gota Cross Road",
-  "582785280625345621": "Gota Cross Road",
-  "582785130301490259": "Ghuma Gam",
-  "582772653421495309": "Narol",
-  "582779748707468337": "R.T.O Circle",
-  "582503324612299575": "Kashiram Textiles",
-  "582774959818933276": "DCIS Circle",
-  "582782471716734018": "Naroda Gam",
-  "582787651447293028": "Science City Approach",
-  "582772906824565776": "CTM Cross Road",
-  "582503998922174203": "Naroda S. T. Workshop",
-  "582503526475765597": "R.T.O Circle",
-  "582503964562435489": "Vasna",
-  "582503247302887011": "Bhadaj Circle",
-  "582503436281451133": "LD Engg. College",
-  "582504003217141566": "Narol",
-  "582503316022364877": "SP Ring Road Approach",
-  "582503539360667628": "Naroda Gam",
-  "582503986037272198": "Naroda Gam",
-  "582503990332239504": "Naroda Gam",
-  "582503955972500796": "Naroda Gam",
-  "582503543655634996": "R.T.O Circle",
-  "582503994627206837": "Naroda Gam",
-  "582503998922174160": "Vasna",
-  "582503298842495383": "Science City Approach",
-  "582503981742304829": "Naroda Gam",
-  "582503535065700269": "CTM Cross Road",
-  "582503436281451082": "SP Ring Road Approach",
-  "582503294547528008": "SP Ring Road Approach",
-  "582503522180798189": "Iskcon Cross Road",
-  "582504007512108863": "Narol",
-  "582503998922174201": "Naroda S. T. Workshop",
-  "582503560835504468": "R.T.O Circle",
-  "582503530770732911": "Iskcon Cross Road",
-  "582503277367658538": "Bhadaj Circle",
-  "582503964562435460": "Vasna",
-  "582785920575472731": "S.T.Workshop (Naroda)",
-  "582503865778186707": "Vatva Railway Colony",
-  "582738779014431601": "Naroda Industrial Township",
-  "582503895842958090": "Naroda Industrial Township",
-  "582503895842958087": "Bareja Eye Hospital",
-  "582503900137925418": "Lal Darwaja",
-  "582503904432892742": "Bareja Eye Hospital",
-  "582503887253023418": "Naroda Industrial Township",
-  "582503676799623073": "Lal Darwaja",
-  "582753463507616690": "Lal Darwaja",
-  "582769157318116349": "Maninagar",
-  "582785791726453850": "Naroda Industrial Township",
-  "582760447124440014": "Maninagar",
-  "582503556540537106": "Maninagar",
-  "582503724044264080": "Nigam Society",
-  "582503376151908023": "Andh Kalyan Kendra",
-  "582503380446875413": "Andh Kalyan Kendra",
-  "582503728339231424": "Andh Kalyan Kendra",
-  "582503573720406503": "Chiloda Octroinaka",
-  "582503363267005979": "Kalupur Terminus",
-  "582503251597854336": "Tragad Gam",
-  "582503578015373863": "S.P.Ring Road (Odhav Gidc)",
-  "582503436281451117": "Lal Darwaja",
-  "582503569425439176": "S.P.Ring Road (Odhav Gidc)",
-  "582503973152370161": "Lal Darwaja",
-  "582503552245569725": "Nigam Society",
-  "582503419101581697": "Ranip Gam",
-  "582503771288904987": "Chandkheda (Sarthi Bunglows)",
-  "582503809943611121": "But Bhavani Mandir",
-  "582503444871385825": "S.P.Ring Road (Odhav Gidc)",
-  "582503728339231385": "Gujarat High Court",
-  "582503805648643760": "Mahalakshmi Talav (Vatva)",
-  "582503350382103824": "Sarkhej-Bavla Circle (Ujala Hotel)",
-  "582782815314117701": "Tragad Gam",
-  "582503822828513186": "Manmohan Park",
-  "582503436281451085": "Lal Darwaja",
-  "582503822828513166": "Vinobabhavenagar",
-  "582788166843368550": "New India Colony (Nikol)",
-  "582751874369717162": "But Bhavani Mandir",
-  "582503805648643784": "Vivekanandnagar",
-  "582503809943611122": "Iskcon Cross Road BRT",
-  "582503947382566093": "Lal Darwaja",
-  "582503930202696753": "Vasna",
-  "582503784173807025": "Iskcon Cross Road BRT",
-  "582503818533545809": "Hatkeshwar Depo",
-  "582503685389557799": "Hatkeshwar Depo",
-  "582503818533545801": "Godhavi Gam",
-  "582503676799623074": "Ghuma Gam",
-  "582503358972038596": "Sahyadri Bunglows",
-  "582503346087136481": "Sahyadri Bunglows",
-  "582503556540537061": "Chandkheda (Sarthi Bunglows)",
-  "582503973152370132": "Ranip Gam",
-  "582503685389557787": "Godhavi Gam",
-  "582503552245569741": "Chinubhainagar",
-  "582503565130471823": "Chinubhainagar",
-  "582503603785178063": "Chinubhainagar",
-  "582503281662625921": "Sattadhar Society",
-  "582503255892821666": "Sattadhar Society",
-  "582503285957593291": "Maninagar",
-  "582503298842495397": "Maninagar",
-  "582503247302886991": "Chinubhainagar",
-  "582503986037272183": "Sattadhar Society",
-  "582503264482756440": "Chinubhainagar",
-  "582503358972038624": "Adinathnagar",
-  "582503904432892756": "Ranip Gam",
-  "582503852893284649": "Godhavi Gam",
-  "582503668209688362": "Chinubhainagar",
-  "582503565130471766": "Chinubhainagar",
-  "582503311727397511": "Godrejcity Phase-1",
-  "582503702569427242": "Vasna",
-  "582503835713415251": "Manmohan Park",
-  "582779009973093421": "Sarkhej Gam",
-  "582503552245569718": "Lal Darwaja",
-  "582779134527145006": "Lal Darwaja",
-  "582786775273964641": "Lal Darwaja",
-  "582503547950602348": "Lal Darwaja",
-  "582503586605308606": "Lal Darwaja",
-  "582503668209688373": "Lal Darwaja",
-  "582503702569427259": "Lal Darwaja",
-  "582503732634198752": "Shilaj Gam",
-  "582503681094590458": "Shilaj Gam",
-  "582503616670080138": "Naroda Industrial Township",
-  "582503255892821695": "Chinubhainagar",
-  "582503625260014813": "Naroda Industrial Township",
-  "582503629554982178": "Lal Darwaja",
-  "582503638144916927": "Lal Darwaja",
-  "582503651029818897": "Lal Darwaja",
-  "582503728339231422": "Tragad Gam",
-  "582503659619753654": "Naroda Industrial Township",
-  "582503603785178021": "Lal Darwaja",
-  "582503844303349925": "Lal Darwaja",
-  "582503479231124653": "Rancharda Gam",
-  "582503328907266986": "Rasraj Jackpot (Ring Road)",
-  "582503324612299604": "Rasraj Jackpot (Ring Road)",
-  "582503298842495424": "Lal Darwaja",
-  "582503337497201767": "Arvind Polycoat (Khatraj)",
-  "582503895842958098": "Kalupur Terminus",
-  "582503633849949559": "Naroda Industrial Township",
-  "582503453461320507": "Lambha Gam",
-  "582503706864394591": "Parshwanath Township",
-  "582503260187789094": "Lal Darwaja",
-  "582503505000928780": "Manmohan Park",
-  "582786126733902941": "Oganaj Gam",
-  "582503543655634973": "Thaltej Gam",
-  "582503517885830855": "Thaltej Gam",
-  "582503535065700311": "Kush Society (New Naroda)",
-  "582503638144916899": "Arvind Polycoat (Khatraj)",
-  "582503784173807015": "But Bhavani Mandir",
-  "582503771288905001": "Lal Darwaja",
-  "582503762698970277": "But Bhavani Mandir",
-  "582503745519100830": "But Bhavani Mandir",
-  "582503792763741746": "Moti Bhoyan Chokdi",
-  "582503801353676406": "Moti Bhoyan Chokdi",
-  "582503779878839669": "Lal Darwaja",
-  "582503431986483708": "Ghuma Gam",
-  "582503431986483736": "Meghaninagar",
-  "582503771288904962": "Ghuma Gam",
-  "582775677078471711": "Maninagar",
-  "582503861483219322": "Sitarambapa Chowk",
-  "582503865778186676": "Sitarambapa Chowk",
-  "582503341792169132": "Rasraj Jackpot (Ring Road)",
-  "582503298842495395": "Arvind Polycoat (Khatraj)",
-  "582503307432430137": "Arvind Polycoat (Khatraj)",
-  "582503316022364850": "Naroda",
-  "582503324612299654": "Naroda",
-  "582503676799623104": "Naroda",
-  "582503663914721026": "Naroda",
-  "582782390112355392": "Vasna",
-  "582503672504655730": "Naroda",
-  "582503543655634976": "Rasraj Jackpot (Ring Road)",
-  "582778696440480812": "L.D.Engineering College BRT",
-  "582503981742304817": "Sarangpur",
-  "582503977447337485": "Sarangpur",
-  "582503500705961462": "Kush Society (New Naroda)",
-  "582503530770732949": "Thaltej Gam",
-  "582503646734851557": "Naroda Industrial Township",
-  "582503290252560694": "Lal Darwaja",
-  "582503307432430118": "Lal Darwaja",
-  "582503659619753642": "Arbudanagar",
-  "582503620965047497": "Lal Darwaja",
-  "582503625260014856": "Lal Darwaja",
-  "582503535065700313": "Indiranagar Vibhag-2",
-  "582503655324786293": "Maninagar",
-  "582503633849949535": "Meghaninagar",
-  "582503874368121357": "Kalupur Terminus",
-  "582503264482756476": "Chandkheda (Sarthi Bunglows)",
-  "582503732634198781": "Lal Darwaja",
-  "582503389036810138": "Lal Darwaja",
-  "582728007236453190": "Maninagar",
-  "582503578015373870": "Maninagar",
-  "582783700077380684": "Maninagar",
-  "582785229085738068": "Maninagar",
-  "582788523325654122": "Tragad Gam",
-  "582783506803852361": "Sabarmati 'D' Cabin",
-  "582778473102181418": "Kalupur Terminus",
-  "582503934497664083": "Matoda Patiya (Intas)",
-  "582503526475765593": "Sarangpur",
-  "582503406216679576": "Meghaninagar",
-  "582768229605180404": "R.T.O Circle",
-  "582773911846913047": "R.T.O Circle",
-  "582640492982829301": "DCIS Circle",
-  "582780616290862136": "LD Engg. College",
-  "582771137298039814": "DCIS Circle",
-  "582776304143696930": "DCIS Circle",
-  "582773752933123092": "DCIS Circle",
-  "582781054377526330": "DCIS Circle",
-  "582782222608630847": "DCIS Circle",
-  "582785662877434969": "LD Engg. College"
+  "582503298842495365": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.60023983333333,
+      "Latitude": 23.026231833333334
+    }
+  },
+  "582787093101544546": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.50108383333333,
+      "Latitude": 23.027822500000003
+    }
+  },
+  "582782630630523971": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.57738566666667,
+      "Latitude": 22.996477833333334
+    }
+  },
+  "582503273072691236": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.59306333333333,
+      "Latitude": 23.016940999999996
+    }
+  },
+  "582778150979634216": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.49164716666668,
+      "Latitude": 23.028340166666666
+    }
+  },
+  "582773722868352019": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.58991316666668,
+      "Latitude": 23.003598000000004
+    }
+  },
+  "582750461325476770": {
+    "destination": "Gota Cross Road",
+    "location": {
+      "Longitude": 72.57817233333334,
+      "Latitude": 23.02199483333333
+    }
+  },
+  "582503410511646933": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.57931516666666,
+      "Latitude": 23.06811583333333
+    }
+  },
+  "582503436281451135": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.54241633333332,
+      "Latitude": 23.0456845
+    }
+  },
+  "582783558343459914": {
+    "destination": "Science City Approach",
+    "location": {
+      "Longitude": 72.599112,
+      "Latitude": 23.022247666666665
+    }
+  },
+  "582503273072691216": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.59208366666667,
+      "Latitude": 23.002285500000003
+    }
+  },
+  "582784816768877650": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.59333133333332,
+      "Latitude": 23.0020915
+    }
+  },
+  "582503414806614258": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.6057695,
+      "Latitude": 22.99712833333333
+    }
+  },
+  "582788252742714472": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.54285333333334,
+      "Latitude": 23.022659666666662
+    }
+  },
+  "582783639947838539": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.58683583333332,
+      "Latitude": 23.001290666666666
+    }
+  },
+  "582780865398965305": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.61087416666666,
+      "Latitude": 22.99834033333333
+    }
+  },
+  "582782394407322689": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.54970416666667,
+      "Latitude": 23.007787999999998
+    }
+  },
+  "582732783240086360": {
+    "destination": "LD Engg. College",
+    "location": {
+      "Longitude": 72.54865916666667,
+      "Latitude": 23.03516533333333
+    }
+  },
+  "582503552245569697": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.58039816666665,
+      "Latitude": 23.068307166666667
+    }
+  },
+  "582503324612299583": {
+    "destination": "Kashiram Textiles",
+    "location": {
+      "Longitude": 72.496022,
+      "Latitude": 23.027975833333336
+    }
+  },
+  "582781350730269756": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.54242133333334,
+      "Latitude": 23.045515
+    }
+  },
+  "582503715454329361": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.53160033333333,
+      "Latitude": 23.027936500000003
+    }
+  },
+  "582780221153870903": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.54417033333334,
+      "Latitude": 23.017587666666667
+    }
+  },
+  "582785443834102871": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.55837633333334,
+      "Latitude": 23.02391583333333
+    }
+  },
+  "582788196908139623": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.58527016666667,
+      "Latitude": 23.10801233333333
+    }
+  },
+  "582778580476363819": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.554729,
+      "Latitude": 23.002882
+    }
+  },
+  "582503749814068172": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.58014833333333,
+      "Latitude": 23.052364833333332
+    }
+  },
+  "582787337914680419": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.58407816666666,
+      "Latitude": 23.000525333333332
+    }
+  },
+  "582503243007919602": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.58531783333333,
+      "Latitude": 23.041480666666665
+    }
+  },
+  "582503431986483778": {
+    "destination": "SP Ring Road Approach",
+    "location": {
+      "Longitude": 72.56791133333333,
+      "Latitude": 23.02367716666667
+    }
+  },
+  "582784795294041169": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.57950566666666,
+      "Latitude": 23.05273233333333
+    }
+  },
+  "582503741224133506": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.60007066666667,
+      "Latitude": 23.02838266666667
+    }
+  },
+  "582503736929166123": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.53168533333334,
+      "Latitude": 23.028242833333334
+    }
+  },
+  "582775256171676701": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.599645,
+      "Latitude": 23.001492666666664
+    }
+  },
+  "582503552245569761": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.54232,
+      "Latitude": 23.045277333333335
+    }
+  },
+  "582780182499165238": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.58694316666667,
+      "Latitude": 23.102513166666668
+    }
+  },
+  "582503646734851590": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.56113783333333,
+      "Latitude": 23.023773
+    }
+  },
+  "582783017177580614": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.53909616666667,
+      "Latitude": 23.022637833333338
+    }
+  },
+  "582503530770732927": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.5325255,
+      "Latitude": 23.029805666666668
+    }
+  },
+  "582784005020058701": {
+    "destination": "LD Engg. College",
+    "location": {
+      "Longitude": 72.576323,
+      "Latitude": 23.067636333333333
+    }
+  },
+  "582774586156778522": {
+    "destination": "Science City Approach",
+    "location": {
+      "Longitude": 72.554293,
+      "Latitude": 23.063311
+    }
+  },
+  "582788287102452841": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.55309650000001,
+      "Latitude": 23.062199666666668
+    }
+  },
+  "582503294547528001": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.59196316666666,
+      "Latitude": 23.085782166666664
+    }
+  },
+  "582772674896331790": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.55959533333333,
+      "Latitude": 23.023983666666663
+    }
+  },
+  "582503792763741719": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.54581883333334,
+      "Latitude": 23.050288500000004
+    }
+  },
+  "582782677875164228": {
+    "destination": "SP Ring Road Approach",
+    "location": {
+      "Longitude": 72.57271999999999,
+      "Latitude": 23.055883499999997
+    }
+  },
+  "582503247302886962": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.5992565,
+      "Latitude": 23.031226
+    }
+  },
+  "582786238403052639": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.55261783333334,
+      "Latitude": 23.061833166666663
+    }
+  },
+  "582781711507522622": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.544269,
+      "Latitude": 23.017722333333335
+    }
+  },
+  "582503784173807008": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.60020266666668,
+      "Latitude": 23.02931866666667
+    }
+  },
+  "582773456580379666": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.57722399999999,
+      "Latitude": 23.067591333333333
+    }
+  },
+  "582503543655635029": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.53660433333333,
+      "Latitude": 23.023012833333336
+    }
+  },
+  "582788141073564773": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.65459933333334,
+      "Latitude": 23.074146166666665
+    }
+  },
+  "582503505000928818": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.58607483333334,
+      "Latitude": 23.019769333333336
+    }
+  },
+  "582781651377980477": {
+    "destination": "Gota Cross Road",
+    "location": {
+      "Longitude": 72.54938383333334,
+      "Latitude": 23.032652
+    }
+  },
+  "582779349275509807": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.6162015,
+      "Latitude": 23.04453883333333
+    }
+  },
+  "582785929165407324": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.55263033333334,
+      "Latitude": 23.06178633333333
+    }
+  },
+  "582768371339101173": {
+    "destination": "Gota Cross Road",
+    "location": {
+      "Longitude": 72.52606633333333,
+      "Latitude": 23.079743833333335
+    }
+  },
+  "582785280625345621": {
+    "destination": "Gota Cross Road",
+    "location": {
+      "Longitude": 72.54252966666667,
+      "Latitude": 23.045917
+    }
+  },
+  "582785130301490259": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.60154416666666,
+      "Latitude": 22.995269833333335
+    }
+  },
+  "582772653421495309": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.59124333333332,
+      "Latitude": 23.013775333333335
+    }
+  },
+  "582779748707468337": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.54418349999999,
+      "Latitude": 23.01738883333333
+    }
+  },
+  "582503324612299575": {
+    "destination": "Kashiram Textiles",
+    "location": {
+      "Longitude": 72.56804466666668,
+      "Latitude": 22.99526266666667
+    }
+  },
+  "582774959818933276": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.594215,
+      "Latitude": 23.10282066666667
+    }
+  },
+  "582782471716734018": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.55168499999999,
+      "Latitude": 23.028347
+    }
+  },
+  "582787651447293028": {
+    "destination": "Science City Approach",
+    "location": {
+      "Longitude": 72.64321766666667,
+      "Latitude": 23.021226666666667
+    }
+  },
+  "582772906824565776": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.623378,
+      "Latitude": 22.983427666666664
+    }
+  },
+  "582503998922174203": {
+    "destination": "Naroda S. T. Workshop",
+    "location": {
+      "Longitude": 72.63193716666666,
+      "Latitude": 22.9916105
+    }
+  },
+  "582503526475765597": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.60080466666666,
+      "Latitude": 22.975694833333332
+    }
+  },
+  "582503964562435489": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.63853033333334,
+      "Latitude": 23.011071833333336
+    }
+  },
+  "582503247302887011": {
+    "destination": "Bhadaj Circle",
+    "location": {
+      "Longitude": 72.52552733333333,
+      "Latitude": 23.068467499999997
+    }
+  },
+  "582503436281451133": {
+    "destination": "LD Engg. College",
+    "location": {
+      "Longitude": 72.59097533333333,
+      "Latitude": 23.016710333333336
+    }
+  },
+  "582504003217141566": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.6404685,
+      "Latitude": 23.039746833333332
+    }
+  },
+  "582503316022364877": {
+    "destination": "SP Ring Road Approach",
+    "location": {
+      "Longitude": 72.60091933333334,
+      "Latitude": 23.02492933333333
+    }
+  },
+  "582503539360667628": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.58829083333333,
+      "Latitude": 23.018642999999997
+    }
+  },
+  "582503986037272198": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.6399985,
+      "Latitude": 23.036951
+    }
+  },
+  "582503990332239504": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.57299816666666,
+      "Latitude": 22.996136833333335
+    }
+  },
+  "582503955972500796": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.63286666666666,
+      "Latitude": 22.992896000000005
+    }
+  },
+  "582503543655634996": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.53290199999999,
+      "Latitude": 23.02402066666667
+    }
+  },
+  "582503994627206837": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.65165516666666,
+      "Latitude": 23.073018833333336
+    }
+  },
+  "582503998922174160": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.61232533333333,
+      "Latitude": 23.041623166666668
+    }
+  },
+  "582503298842495383": {
+    "destination": "Science City Approach",
+    "location": {
+      "Longitude": 72.57817100000001,
+      "Latitude": 23.05338316666667
+    }
+  },
+  "582503981742304829": {
+    "destination": "Naroda Gam",
+    "location": {
+      "Longitude": 72.5620955,
+      "Latitude": 22.997606833333332
+    }
+  },
+  "582503535065700269": {
+    "destination": "CTM Cross Road",
+    "location": {
+      "Longitude": 72.585358,
+      "Latitude": 22.982629499999998
+    }
+  },
+  "582503436281451082": {
+    "destination": "SP Ring Road Approach",
+    "location": {
+      "Longitude": 72.62910816666667,
+      "Latitude": 23.02021516666667
+    }
+  },
+  "582503294547528008": {
+    "destination": "SP Ring Road Approach",
+    "location": {
+      "Longitude": 72.53214566666666,
+      "Latitude": 23.063274333333332
+    }
+  },
+  "582503522180798189": {
+    "destination": "Iskcon Cross Road",
+    "location": {
+      "Longitude": 72.60080083333334,
+      "Latitude": 23.025059666666667
+    }
+  },
+  "582504007512108863": {
+    "destination": "Narol",
+    "location": {
+      "Longitude": 72.63905083333334,
+      "Latitude": 23.027347166666665
+    }
+  },
+  "582503998922174201": {
+    "destination": "Naroda S. T. Workshop",
+    "location": {
+      "Longitude": 72.642931,
+      "Latitude": 23.060114666666664
+    }
+  },
+  "582503560835504468": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.60295433333334,
+      "Latitude": 22.976407499999997
+    }
+  },
+  "582503530770732911": {
+    "destination": "Iskcon Cross Road",
+    "location": {
+      "Longitude": 72.6329425,
+      "Latitude": 23.055496499999997
+    }
+  },
+  "582503277367658538": {
+    "destination": "Bhadaj Circle",
+    "location": {
+      "Longitude": 72.60024866666666,
+      "Latitude": 23.02657433333333
+    }
+  },
+  "582503964562435460": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.57800783333333,
+      "Latitude": 22.996765166666666
+    }
+  },
+  "582785920575472731": {
+    "destination": "S.T.Workshop (Naroda)",
+    "location": {
+      "Longitude": 72.61630033333333,
+      "Latitude": 23.04460333333333
+    }
+  },
+  "582503865778186707": {
+    "destination": "Vatva Railway Colony",
+    "location": {
+      "Longitude": 72.60129766666667,
+      "Latitude": 23.03317666666667
+    }
+  },
+  "582738779014431601": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.668599,
+      "Latitude": 23.088858833333333
+    }
+  },
+  "582503895842958090": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.59474666666667,
+      "Latitude": 23.01705516666667
+    }
+  },
+  "582503895842958087": {
+    "destination": "Bareja Eye Hospital",
+    "location": {
+      "Longitude": 72.5917325,
+      "Latitude": 22.960019666666668
+    }
+  },
+  "582503900137925418": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.592456,
+      "Latitude": 22.943453999999996
+    }
+  },
+  "582503904432892742": {
+    "destination": "Bareja Eye Hospital",
+    "location": {
+      "Longitude": 72.592619,
+      "Latitude": 22.86541783333333
+    }
+  },
+  "582503887253023418": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.6153635,
+      "Latitude": 22.971300333333335
+    }
+  },
+  "582503676799623073": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.68778900000001,
+      "Latitude": 22.956520833333336
+    }
+  },
+  "582753463507616690": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.5711365,
+      "Latitude": 23.026410166666665
+    }
+  },
+  "582769157318116349": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.60252583333333,
+      "Latitude": 23.049440833333332
+    }
+  },
+  "582785791726453850": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.63713550000001,
+      "Latitude": 23.05842433333333
+    }
+  },
+  "582760447124440014": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.60215683333332,
+      "Latitude": 22.999772500000002
+    }
+  },
+  "582503556540537106": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.60975866666666,
+      "Latitude": 23.002206833333336
+    }
+  },
+  "582503724044264080": {
+    "destination": "Nigam Society",
+    "location": {
+      "Longitude": 72.58010349999999,
+      "Latitude": 23.022051166666664
+    }
+  },
+  "582503376151908023": {
+    "destination": "Andh Kalyan Kendra",
+    "location": {
+      "Longitude": 72.57158550000001,
+      "Latitude": 23.062518999999998
+    }
+  },
+  "582503380446875413": {
+    "destination": "Andh Kalyan Kendra",
+    "location": {
+      "Longitude": 72.59623133333334,
+      "Latitude": 22.992191666666667
+    }
+  },
+  "582503728339231424": {
+    "destination": "Andh Kalyan Kendra",
+    "location": {
+      "Longitude": 72.59148716666667,
+      "Latitude": 23.00802866666667
+    }
+  },
+  "582503573720406503": {
+    "destination": "Chiloda Octroinaka",
+    "location": {
+      "Longitude": 72.66825466666666,
+      "Latitude": 23.100971333333337
+    }
+  },
+  "582503363267005979": {
+    "destination": "Kalupur Terminus",
+    "location": {
+      "Longitude": 72.560073,
+      "Latitude": 23.070278500000004
+    }
+  },
+  "582503251597854336": {
+    "destination": "Tragad Gam",
+    "location": {
+      "Longitude": 72.588784,
+      "Latitude": 23.037791500000004
+    }
+  },
+  "582503578015373863": {
+    "destination": "S.P.Ring Road (Odhav Gidc)",
+    "location": {
+      "Longitude": 72.67417083333333,
+      "Latitude": 23.031184500000002
+    }
+  },
+  "582503436281451117": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.57909116666666,
+      "Latitude": 23.023837166666667
+    }
+  },
+  "582503569425439176": {
+    "destination": "S.P.Ring Road (Odhav Gidc)",
+    "location": {
+      "Longitude": 72.67422766666667,
+      "Latitude": 23.03126666666667
+    }
+  },
+  "582503973152370161": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.57115566666667,
+      "Latitude": 23.0215705
+    }
+  },
+  "582503552245569725": {
+    "destination": "Nigam Society",
+    "location": {
+      "Longitude": 72.60155366666666,
+      "Latitude": 23.049360166666663
+    }
+  },
+  "582503419101581697": {
+    "destination": "Ranip Gam",
+    "location": {
+      "Longitude": 72.62734316666666,
+      "Latitude": 23.038243833333333
+    }
+  },
+  "582503771288904987": {
+    "destination": "Chandkheda (Sarthi Bunglows)",
+    "location": {
+      "Longitude": 72.57921966666666,
+      "Latitude": 23.123131166666667
+    }
+  },
+  "582503809943611121": {
+    "destination": "But Bhavani Mandir",
+    "location": {
+      "Longitude": 72.60143066666666,
+      "Latitude": 23.042976833333334
+    }
+  },
+  "582503444871385825": {
+    "destination": "S.P.Ring Road (Odhav Gidc)",
+    "location": {
+      "Longitude": 72.59142783333333,
+      "Latitude": 23.0377755
+    }
+  },
+  "582503728339231385": {
+    "destination": "Gujarat High Court",
+    "location": {
+      "Longitude": 72.5873675,
+      "Latitude": 23.036002833333335
+    }
+  },
+  "582503805648643760": {
+    "destination": "Mahalakshmi Talav (Vatva)",
+    "location": {
+      "Longitude": 72.61917816666667,
+      "Latitude": 22.950942
+    }
+  },
+  "582503350382103824": {
+    "destination": "Sarkhej-Bavla Circle (Ujala Hotel)",
+    "location": {
+      "Longitude": 72.49245916666668,
+      "Latitude": 22.980416833333333
+    }
+  },
+  "582782815314117701": {
+    "destination": "Tragad Gam",
+    "location": {
+      "Longitude": 72.57627649999999,
+      "Latitude": 23.113045000000003
+    }
+  },
+  "582503822828513186": {
+    "destination": "Manmohan Park",
+    "location": {
+      "Longitude": 72.66218916666666,
+      "Latitude": 23.032822333333336
+    }
+  },
+  "582503436281451085": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.56384183333333,
+      "Latitude": 23.052085499999997
+    }
+  },
+  "582503822828513166": {
+    "destination": "Vinobabhavenagar",
+    "location": {
+      "Longitude": 72.59118483333333,
+      "Latitude": 23.002136166666666
+    }
+  },
+  "582788166843368550": {
+    "destination": "New India Colony (Nikol)",
+    "location": {
+      "Longitude": 72.59823066666667,
+      "Latitude": 23.018266
+    }
+  },
+  "582751874369717162": {
+    "destination": "But Bhavani Mandir",
+    "location": {
+      "Longitude": 72.5163785,
+      "Latitude": 23.00630383333333
+    }
+  },
+  "582503805648643784": {
+    "destination": "Vivekanandnagar",
+    "location": {
+      "Longitude": 72.55953733333334,
+      "Latitude": 23.024033999999997
+    }
+  },
+  "582503809943611122": {
+    "destination": "Iskcon Cross Road BRT",
+    "location": {
+      "Longitude": 72.59836216666666,
+      "Latitude": 23.008498999999997
+    }
+  },
+  "582503947382566093": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.59791233333334,
+      "Latitude": 23.008163833333334
+    }
+  },
+  "582503930202696753": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.5597585,
+      "Latitude": 23.000643
+    }
+  },
+  "582503784173807025": {
+    "destination": "Iskcon Cross Road BRT",
+    "location": {
+      "Longitude": 72.63147833333333,
+      "Latitude": 22.993714833333335
+    }
+  },
+  "582503818533545809": {
+    "destination": "Hatkeshwar Depo",
+    "location": {
+      "Longitude": 72.565625,
+      "Latitude": 23.021351333333335
+    }
+  },
+  "582503685389557799": {
+    "destination": "Hatkeshwar Depo",
+    "location": {
+      "Longitude": 72.5984905,
+      "Latitude": 23.0087315
+    }
+  },
+  "582503818533545801": {
+    "destination": "Godhavi Gam",
+    "location": {
+      "Longitude": 72.45359616666666,
+      "Latitude": 23.030517
+    }
+  },
+  "582503676799623074": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.556809,
+      "Latitude": 23.022853
+    }
+  },
+  "582503358972038596": {
+    "destination": "Sahyadri Bunglows",
+    "location": {
+      "Longitude": 72.58779716666666,
+      "Latitude": 23.036941333333335
+    }
+  },
+  "582503346087136481": {
+    "destination": "Sahyadri Bunglows",
+    "location": {
+      "Longitude": 72.55679533333334,
+      "Latitude": 23.07482866666667
+    }
+  },
+  "582503556540537061": {
+    "destination": "Chandkheda (Sarthi Bunglows)",
+    "location": {
+      "Longitude": 72.58787966666667,
+      "Latitude": 23.09925183333333
+    }
+  },
+  "582503973152370132": {
+    "destination": "Ranip Gam",
+    "location": {
+      "Longitude": 72.6452995,
+      "Latitude": 23.02155583333333
+    }
+  },
+  "582503685389557787": {
+    "destination": "Godhavi Gam",
+    "location": {
+      "Longitude": 72.596958,
+      "Latitude": 23.00756033333333
+    }
+  },
+  "582503552245569741": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.68883000000001,
+      "Latitude": 23.026198500000003
+    }
+  },
+  "582503565130471823": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.68905633333334,
+      "Latitude": 23.02624766666667
+    }
+  },
+  "582503603785178063": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.56424050000001,
+      "Latitude": 23.013303166666667
+    }
+  },
+  "582503281662625921": {
+    "destination": "Sattadhar Society",
+    "location": {
+      "Longitude": 72.61095266666666,
+      "Latitude": 22.9988965
+    }
+  },
+  "582503255892821666": {
+    "destination": "Sattadhar Society",
+    "location": {
+      "Longitude": 72.5834935,
+      "Latitude": 23.02146433333333
+    }
+  },
+  "582503285957593291": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.58454316666666,
+      "Latitude": 23.021210333333336
+    }
+  },
+  "582503298842495397": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.58331433333333,
+      "Latitude": 23.021512999999995
+    }
+  },
+  "582503247302886991": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.68901083333334,
+      "Latitude": 23.0261715
+    }
+  },
+  "582503986037272183": {
+    "destination": "Sattadhar Society",
+    "location": {
+      "Longitude": 72.52542633333334,
+      "Latitude": 23.062865666666667
+    }
+  },
+  "582503264482756440": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.59855483333334,
+      "Latitude": 23.0313495
+    }
+  },
+  "582503358972038624": {
+    "destination": "Adinathnagar",
+    "location": {
+      "Longitude": 72.66156466666666,
+      "Latitude": 23.018974000000004
+    }
+  },
+  "582503904432892756": {
+    "destination": "Ranip Gam",
+    "location": {
+      "Longitude": 72.59799433333333,
+      "Latitude": 23.003199333333335
+    }
+  },
+  "582503852893284649": {
+    "destination": "Godhavi Gam",
+    "location": {
+      "Longitude": 72.525615,
+      "Latitude": 23.025843000000002
+    }
+  },
+  "582503668209688362": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.54684933333333,
+      "Latitude": 23.000623000000004
+    }
+  },
+  "582503565130471766": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.51174466666666,
+      "Latitude": 22.98898466666667
+    }
+  },
+  "582503311727397511": {
+    "destination": "Godrejcity Phase-1",
+    "location": {
+      "Longitude": 72.59948933333334,
+      "Latitude": 23.009628833333334
+    }
+  },
+  "582503702569427242": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.64751516666666,
+      "Latitude": 23.0548855
+    }
+  },
+  "582503835713415251": {
+    "destination": "Manmohan Park",
+    "location": {
+      "Longitude": 72.63731866666667,
+      "Latitude": 23.047689666666663
+    }
+  },
+  "582779009973093421": {
+    "destination": "Sarkhej Gam",
+    "location": {
+      "Longitude": 72.57862216666668,
+      "Latitude": 23.010500833333335
+    }
+  },
+  "582503552245569718": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.53136416666666,
+      "Latitude": 23.06372916666667
+    }
+  },
+  "582779134527145006": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.57024233333333,
+      "Latitude": 23.047095
+    }
+  },
+  "582786775273964641": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.570482,
+      "Latitude": 23.030477166666667
+    }
+  },
+  "582503547950602348": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.58785016666667,
+      "Latitude": 23.037091666666665
+    }
+  },
+  "582503586605308606": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.5718475,
+      "Latitude": 23.055219833333332
+    }
+  },
+  "582503668209688373": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.535255,
+      "Latitude": 23.060638666666666
+    }
+  },
+  "582503702569427259": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.4801685,
+      "Latitude": 23.046638500000004
+    }
+  },
+  "582503732634198752": {
+    "destination": "Shilaj Gam",
+    "location": {
+      "Longitude": 72.47621516666666,
+      "Latitude": 23.0533895
+    }
+  },
+  "582503681094590458": {
+    "destination": "Shilaj Gam",
+    "location": {
+      "Longitude": 72.51666766666668,
+      "Latitude": 23.049727333333333
+    }
+  },
+  "582503616670080138": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.66801283333332,
+      "Latitude": 23.10033483333333
+    }
+  },
+  "582503255892821695": {
+    "destination": "Chinubhainagar",
+    "location": {
+      "Longitude": 72.68725683333334,
+      "Latitude": 23.026023000000002
+    }
+  },
+  "582503625260014813": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.6323915,
+      "Latitude": 23.086025000000003
+    }
+  },
+  "582503629554982178": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.58489916666667,
+      "Latitude": 23.03303616666667
+    }
+  },
+  "582503638144916927": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.58487116666667,
+      "Latitude": 23.033072333333333
+    }
+  },
+  "582503651029818897": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.6036555,
+      "Latitude": 23.071607000000004
+    }
+  },
+  "582503728339231422": {
+    "destination": "Tragad Gam",
+    "location": {
+      "Longitude": 72.58783700000001,
+      "Latitude": 23.037272833333336
+    }
+  },
+  "582503659619753654": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.67591683333333,
+      "Latitude": 23.094362333333333
+    }
+  },
+  "582503603785178021": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.58977933333334,
+      "Latitude": 23.048853666666666
+    }
+  },
+  "582503844303349925": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.57112733333334,
+      "Latitude": 23.04024133333333
+    }
+  },
+  "582503479231124653": {
+    "destination": "Rancharda Gam",
+    "location": {
+      "Longitude": 72.56514616666666,
+      "Latitude": 23.035043333333338
+    }
+  },
+  "582503328907266986": {
+    "destination": "Rasraj Jackpot (Ring Road)",
+    "location": {
+      "Longitude": 72.67998733333334,
+      "Latitude": 23.052412333333336
+    }
+  },
+  "582503324612299604": {
+    "destination": "Rasraj Jackpot (Ring Road)",
+    "location": {
+      "Longitude": 72.6061725,
+      "Latitude": 23.030467166666668
+    }
+  },
+  "582503298842495424": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.6234515,
+      "Latitude": 23.0401065
+    }
+  },
+  "582503337497201767": {
+    "destination": "Arvind Polycoat (Khatraj)",
+    "location": {
+      "Longitude": 72.44635016666666,
+      "Latitude": 23.147598833333337
+    }
+  },
+  "582503895842958098": {
+    "destination": "Kalupur Terminus",
+    "location": {
+      "Longitude": 72.58607083333332,
+      "Latitude": 23.03934283333333
+    }
+  },
+  "582503633849949559": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.64209033333333,
+      "Latitude": 23.052908333333335
+    }
+  },
+  "582503453461320507": {
+    "destination": "Lambha Gam",
+    "location": {
+      "Longitude": 72.640982,
+      "Latitude": 23.046687833333333
+    }
+  },
+  "582503706864394591": {
+    "destination": "Parshwanath Township",
+    "location": {
+      "Longitude": 72.6356515,
+      "Latitude": 23.05737866666667
+    }
+  },
+  "582503260187789094": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.66143866666667,
+      "Latitude": 23.076003
+    }
+  },
+  "582503505000928780": {
+    "destination": "Manmohan Park",
+    "location": {
+      "Longitude": 72.59931283333334,
+      "Latitude": 23.029887999999996
+    }
+  },
+  "582786126733902941": {
+    "destination": "Oganaj Gam",
+    "location": {
+      "Longitude": 72.63068016666666,
+      "Latitude": 23.034640666666665
+    }
+  },
+  "582503543655634973": {
+    "destination": "Thaltej Gam",
+    "location": {
+      "Longitude": 72.64010400000001,
+      "Latitude": 23.039387166666664
+    }
+  },
+  "582503517885830855": {
+    "destination": "Thaltej Gam",
+    "location": {
+      "Longitude": 72.6601615,
+      "Latitude": 23.072486833333333
+    }
+  },
+  "582503535065700311": {
+    "destination": "Kush Society (New Naroda)",
+    "location": {
+      "Longitude": 72.59196133333333,
+      "Latitude": 23.014542833333334
+    }
+  },
+  "582503638144916899": {
+    "destination": "Arvind Polycoat (Khatraj)",
+    "location": {
+      "Longitude": 72.47541366666665,
+      "Latitude": 23.118787833333332
+    }
+  },
+  "582503784173807015": {
+    "destination": "But Bhavani Mandir",
+    "location": {
+      "Longitude": 72.56334283333334,
+      "Latitude": 23.011632333333335
+    }
+  },
+  "582503771288905001": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.56441833333334,
+      "Latitude": 23.013458833333335
+    }
+  },
+  "582503762698970277": {
+    "destination": "But Bhavani Mandir",
+    "location": {
+      "Longitude": 72.58045166666668,
+      "Latitude": 23.02498216666667
+    }
+  },
+  "582503745519100830": {
+    "destination": "But Bhavani Mandir",
+    "location": {
+      "Longitude": 72.5446015,
+      "Latitude": 23.007397666666666
+    }
+  },
+  "582503792763741746": {
+    "destination": "Moti Bhoyan Chokdi",
+    "location": {
+      "Longitude": 72.51582766666667,
+      "Latitude": 23.114127333333332
+    }
+  },
+  "582503801353676406": {
+    "destination": "Moti Bhoyan Chokdi",
+    "location": {
+      "Longitude": 72.580428,
+      "Latitude": 23.025418166666668
+    }
+  },
+  "582503779878839669": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.50886799999999,
+      "Latitude": 23.119538666666667
+    }
+  },
+  "582503431986483708": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.50482283333334,
+      "Latitude": 23.027372500000002
+    }
+  },
+  "582503431986483736": {
+    "destination": "Meghaninagar",
+    "location": {
+      "Longitude": 72.5263565,
+      "Latitude": 23.02580533333333
+    }
+  },
+  "582503771288904962": {
+    "destination": "Ghuma Gam",
+    "location": {
+      "Longitude": 72.46295400000001,
+      "Latitude": 23.033573500000003
+    }
+  },
+  "582775677078471711": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.55340116666666,
+      "Latitude": 23.049520999999995
+    }
+  },
+  "582503861483219322": {
+    "destination": "Sitarambapa Chowk",
+    "location": {
+      "Longitude": 72.52954483333333,
+      "Latitude": 23.03756333333333
+    }
+  },
+  "582503865778186676": {
+    "destination": "Sitarambapa Chowk",
+    "location": {
+      "Longitude": 72.54591033333332,
+      "Latitude": 23.02837416666667
+    }
+  },
+  "582503341792169132": {
+    "destination": "Rasraj Jackpot (Ring Road)",
+    "location": {
+      "Longitude": 72.60116633333334,
+      "Latitude": 23.03319683333333
+    }
+  },
+  "582503298842495395": {
+    "destination": "Arvind Polycoat (Khatraj)",
+    "location": {
+      "Longitude": 72.48519083333333,
+      "Latitude": 23.097718
+    }
+  },
+  "582503307432430137": {
+    "destination": "Arvind Polycoat (Khatraj)",
+    "location": {
+      "Longitude": 72.60446499999999,
+      "Latitude": 23.034383333333334
+    }
+  },
+  "582503316022364850": {
+    "destination": "Naroda",
+    "location": {
+      "Longitude": 72.62572266666666,
+      "Latitude": 23.050999
+    }
+  },
+  "582503324612299654": {
+    "destination": "Naroda",
+    "location": {
+      "Longitude": 72.56987266666667,
+      "Latitude": 23.043108500000002
+    }
+  },
+  "582503676799623104": {
+    "destination": "Naroda",
+    "location": {
+      "Longitude": 72.568426,
+      "Latitude": 23.080245833333333
+    }
+  },
+  "582503663914721026": {
+    "destination": "Naroda",
+    "location": {
+      "Longitude": 72.54493633333333,
+      "Latitude": 22.999249666666667
+    }
+  },
+  "582782390112355392": {
+    "destination": "Vasna",
+    "location": {
+      "Longitude": 72.6016375,
+      "Latitude": 23.04941216666667
+    }
+  },
+  "582503672504655730": {
+    "destination": "Naroda",
+    "location": {
+      "Longitude": 72.65326316666666,
+      "Latitude": 23.073694333333332
+    }
+  },
+  "582503543655634976": {
+    "destination": "Rasraj Jackpot (Ring Road)",
+    "location": {
+      "Longitude": 72.67323916666666,
+      "Latitude": 23.05350616666666
+    }
+  },
+  "582778696440480812": {
+    "destination": "L.D.Engineering College BRT",
+    "location": {
+      "Longitude": 72.59839433333333,
+      "Latitude": 23.01849966666667
+    }
+  },
+  "582503981742304817": {
+    "destination": "Sarangpur",
+    "location": {
+      "Longitude": 72.58708733333333,
+      "Latitude": 23.012126
+    }
+  },
+  "582503977447337485": {
+    "destination": "Sarangpur",
+    "location": {
+      "Longitude": 72.47698399999999,
+      "Latitude": 23.027821499999998
+    }
+  },
+  "582503500705961462": {
+    "destination": "Kush Society (New Naroda)",
+    "location": {
+      "Longitude": 72.56263016666666,
+      "Latitude": 23.016165666666666
+    }
+  },
+  "582503530770732949": {
+    "destination": "Thaltej Gam",
+    "location": {
+      "Longitude": 72.55460033333334,
+      "Latitude": 23.033678000000002
+    }
+  },
+  "582503646734851557": {
+    "destination": "Naroda Industrial Township",
+    "location": {
+      "Longitude": 72.65574199999999,
+      "Latitude": 23.076995000000004
+    }
+  },
+  "582503290252560694": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.59531999999999,
+      "Latitude": 23.017310166666668
+    }
+  },
+  "582503307432430118": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.6513055,
+      "Latitude": 23.03990683333333
+    }
+  },
+  "582503659619753642": {
+    "destination": "Arbudanagar",
+    "location": {
+      "Longitude": 72.63239616666667,
+      "Latitude": 23.00966133333333
+    }
+  },
+  "582503620965047497": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.58095466666667,
+      "Latitude": 23.02641733333333
+    }
+  },
+  "582503625260014856": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.5852325,
+      "Latitude": 23.094573500000003
+    }
+  },
+  "582503535065700313": {
+    "destination": "Indiranagar Vibhag-2",
+    "location": {
+      "Longitude": 72.58817483333334,
+      "Latitude": 22.9925635
+    }
+  },
+  "582503655324786293": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.5805035,
+      "Latitude": 23.024648000000003
+    }
+  },
+  "582503633849949535": {
+    "destination": "Meghaninagar",
+    "location": {
+      "Longitude": 72.59731933333335,
+      "Latitude": 23.0351365
+    }
+  },
+  "582503874368121357": {
+    "destination": "Kalupur Terminus",
+    "location": {
+      "Longitude": 72.5854145,
+      "Latitude": 23.062023500000002
+    }
+  },
+  "582503264482756476": {
+    "destination": "Chandkheda (Sarthi Bunglows)",
+    "location": {
+      "Longitude": 72.58496033333333,
+      "Latitude": 23.06285383333333
+    }
+  },
+  "582503732634198781": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.5102405,
+      "Latitude": 23.05041883333333
+    }
+  },
+  "582503389036810138": {
+    "destination": "Lal Darwaja",
+    "location": {
+      "Longitude": 72.5824745,
+      "Latitude": 23.121493333333333
+    }
+  },
+  "582728007236453190": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.60932899999999,
+      "Latitude": 23.00237083333333
+    }
+  },
+  "582503578015373870": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.61101833333333,
+      "Latitude": 22.998945499999998
+    }
+  },
+  "582783700077380684": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.600519,
+      "Latitude": 23.04716
+    }
+  },
+  "582785229085738068": {
+    "destination": "Maninagar",
+    "location": {
+      "Longitude": 72.62997316666666,
+      "Latitude": 23.036275999999997
+    }
+  },
+  "582788523325654122": {
+    "destination": "Tragad Gam",
+    "location": {
+      "Longitude": 72.581626,
+      "Latitude": 22.942219333333334
+    }
+  },
+  "582783506803852361": {
+    "destination": "Sabarmati 'D' Cabin",
+    "location": {
+      "Longitude": 72.58693383333333,
+      "Latitude": 23.068507500000003
+    }
+  },
+  "582778473102181418": {
+    "destination": "Kalupur Terminus",
+    "location": {
+      "Longitude": 72.5702135,
+      "Latitude": 23.0452435
+    }
+  },
+  "582503934497664083": {
+    "destination": "Matoda Patiya (Intas)",
+    "location": {
+      "Longitude": 72.57207383333333,
+      "Latitude": 23.05551216666667
+    }
+  },
+  "582503526475765593": {
+    "destination": "Sarangpur",
+    "location": {
+      "Longitude": 72.588479,
+      "Latitude": 22.9669745
+    }
+  },
+  "582503406216679576": {
+    "destination": "Meghaninagar",
+    "location": {
+      "Longitude": 72.56442883333334,
+      "Latitude": 23.035440833333336
+    }
+  },
+  "582768229605180404": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.58538100000001,
+      "Latitude": 23.0411555
+    }
+  },
+  "582773911846913047": {
+    "destination": "R.T.O Circle",
+    "location": {
+      "Longitude": 72.59894949999999,
+      "Latitude": 23.030680500000003
+    }
+  },
+  "582640492982829301": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.56618449999999,
+      "Latitude": 23.067765666666666
+    }
+  },
+  "582780616290862136": {
+    "destination": "LD Engg. College",
+    "location": {
+      "Longitude": 72.54682299999999,
+      "Latitude": 23.05240216666667
+    }
+  },
+  "582771137298039814": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.58359316666666,
+      "Latitude": 23.113291333333336
+    }
+  },
+  "582776304143696930": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.58624549999999,
+      "Latitude": 23.104845833333336
+    }
+  },
+  "582773752933123092": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.58304416666667,
+      "Latitude": 23.124234333333334
+    }
+  },
+  "582781054377526330": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.5607335,
+      "Latitude": 23.066934
+    }
+  },
+  "582782222608630847": {
+    "destination": "DCIS Circle",
+    "location": {
+      "Longitude": 72.539017,
+      "Latitude": 23.040727
+    }
+  },
+  "582785662877434969": {
+    "destination": "LD Engg. College",
+    "location": {
+      "Longitude": 72.58870449999999,
+      "Latitude": 23.09713583333333
+    }
+  }
 }

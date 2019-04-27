@@ -25,8 +25,9 @@ func main() {
 	toRouteMap := LoadPaths("./resources/to-graph.json")
 	fromRouteMap := LoadPaths("./resources/from-graph.json")
 	routeStopMap := LoadRoutes("./resources/routes.json")
+	timetable := LoadTimetable("./resources/timetable.json")
 	rt, pointsMap := createLatLngTree(stopMap)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap))
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap, timetable))
 	initServer(r)
 }
 
@@ -225,7 +226,7 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 	return routeJourneys
 }
 
-func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap) http.HandlerFunc {
+func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap, timetable BusStopArrival) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
 		latlngStr := params["latlng1"]
@@ -297,8 +298,16 @@ type RouteStopMap map[string][]Stop
 type RouteMap map[string][]RoutePath
 type Route map[string]RouteMap
 
+type StopArrival map[string]int
+type BusStopArrival map[string]StopArrival
+
+type Vehicle struct {
+	Location    Position `json:"location"`
+	Destination string   `json:"destination"`
+}
+
 type VehicleMonitoring struct {
-	data map[string]string
+	Data map[string]Vehicle
 }
 
 func (v *VehicleMonitoring) GetData() {
@@ -308,9 +317,9 @@ func (v *VehicleMonitoring) GetData() {
 		fmt.Println(err.Error())
 	}
 	jsonParser := json.NewDecoder(configFile)
-	vehicleData := make(map[string]string)
+	vehicleData := make(map[string]Vehicle)
 	jsonParser.Decode(&vehicleData)
-	v.data = vehicleData
+	v.Data = vehicleData
 }
 
 func (fromStop Stop) GetDistance(lat, lng float64) float64 {
@@ -360,4 +369,16 @@ func LoadRoutes(file string) RouteStopMap {
 	var routemap RouteStopMap
 	jsonParser.Decode(&routemap)
 	return routemap
+}
+
+func LoadTimetable(file string) BusStopArrival {
+	configFile, err := os.Open(file)
+	defer configFile.Close()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	jsonParser := json.NewDecoder(configFile)
+	var busStopArrival BusStopArrival
+	jsonParser.Decode(&busStopArrival)
+	return busStopArrival
 }
