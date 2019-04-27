@@ -40,6 +40,7 @@ type RTreePoint struct {
 
 const tol = 0.001
 const MAX_STOPS = 10
+const MAX_JOURNEYS = 20
 
 func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
@@ -206,8 +207,14 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 		for _, toStop := range toStops {
 			routeWholeSegments := GetSingleRouteWholeSigment(fromStop, toStop, toRouteMap)
 			for _, routeWholeSegment := range routeWholeSegments {
+				segments := GetRouteSegments(routeWholeSegment, routeStopMap)
+				totalDistance := float64(0)
+				for _, segment := range segments {
+					totalDistance = totalDistance + segment.RoutePath.Distance
+				}
 				routeJourneys = append(routeJourneys, RouteJourney{
-					Segments: GetRouteSegments(routeWholeSegment, routeStopMap),
+					Segments:      segments,
+					TotalDistance: totalDistance,
 				})
 			}
 			routeWholeDoubleSegments := GetDoubleRouteWholeSigment(fromStop, toStop, toRouteMap, fromRouteMap, stopMap)
@@ -219,11 +226,22 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 						routeSegments = append(routeSegments, routeSegmentPart)
 					}
 				}
+				totalDistance := float64(0)
+				for _, segment := range routeSegments {
+					totalDistance = totalDistance + segment.RoutePath.Distance
+				}
 				routeJourneys = append(routeJourneys, RouteJourney{
-					Segments: routeSegments,
+					Segments:      routeSegments,
+					TotalDistance: totalDistance,
 				})
 			}
 		}
+	}
+	sort.Slice(routeJourneys, func(i, j int) bool {
+		return routeJourneys[i].TotalDistance < routeJourneys[j].TotalDistance
+	})
+	if len(routeJourneys) > MAX_JOURNEYS {
+		return routeJourneys[:MAX_JOURNEYS]
 	}
 	return routeJourneys
 }
