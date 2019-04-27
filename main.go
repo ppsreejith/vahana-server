@@ -6,12 +6,14 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/dhconnelly/rtreego"
 	"github.com/gorilla/mux"
+	"github.com/jbowles/disfun"
 )
 
 type PointsMap = map[string]RTreePoint
@@ -90,6 +92,11 @@ func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap
 			stops = append(stops, stop)
 		}
 	}
+	sort.Slice(stops, func(i, j int) bool {
+		dis1 := stops[i].GetDistance(point[0], point[1])
+		dis2 := stops[j].GetDistance(point[0], point[1])
+		return dis1 < dis2
+	})
 	return stops
 }
 
@@ -136,6 +143,15 @@ type Position struct {
 type Stop struct {
 	Name     string   `json:"StopPointName"`
 	Location Position `json:"Location"`
+}
+
+func (fromStop Stop) GetDistance(lat, lng float64) float64 {
+	return disfun.HaversineLatLon(
+		fromStop.Location.Latitude,
+		fromStop.Location.Longitude,
+		lat,
+		lng,
+	)
 }
 
 func LoadStops(file string) []Stop {
