@@ -297,6 +297,22 @@ type RouteStopMap map[string][]Stop
 type RouteMap map[string][]RoutePath
 type Route map[string]RouteMap
 
+type VehicleMonitoring struct {
+	data map[string]string
+}
+
+func (v *VehicleMonitoring) GetData() {
+	configFile, err := os.Open("./resources/vehicles.json")
+	defer configFile.Close()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	jsonParser := json.NewDecoder(configFile)
+	vehicleData := make(map[string]string)
+	jsonParser.Decode(&vehicleData)
+	v.data = vehicleData
+}
+
 func (fromStop Stop) GetDistance(lat, lng float64) float64 {
 	return disfun.HaversineLatLon(
 		fromStop.Location.Latitude,
