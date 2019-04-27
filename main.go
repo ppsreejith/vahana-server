@@ -124,6 +124,9 @@ func GetDoubleRouteWholeSigment(fromStop, toStop Stop, toRouteMap Route, fromRou
 		}
 		for _, fromPath := range fromPaths {
 			for _, toPath := range toPaths {
+				if fromPath.RouteCode == toPath.RouteCode {
+					continue
+				}
 				routeSegments = append(routeSegments, []RouteSegment{
 					RouteSegment{
 						FromStop:  fromStop,
