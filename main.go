@@ -26,8 +26,10 @@ func main() {
 	fromRouteMap := LoadPaths("./resources/from-graph.json")
 	routeStopMap := LoadRoutes("./resources/routes.json")
 	timetable := LoadTimetable("./resources/timetable.json")
+	var vehicleMonitoring VehicleMonitoring
+	vehicleMonitoring.GetData()
 	rt, pointsMap := createLatLngTree(stopMap)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap, timetable))
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap, timetable, vehicleMonitoring))
 	initServer(r)
 }
 
@@ -226,7 +228,7 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 	return routeJourneys
 }
 
-func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap, timetable BusStopArrival) http.HandlerFunc {
+func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap, timetable BusStopArrival, vehicleMonitoring VehicleMonitoring) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
 		latlngStr := params["latlng1"]
