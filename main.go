@@ -21,10 +21,11 @@ type PointsMap = map[string]RTreePoint
 
 func main() {
 	r := mux.NewRouter()
-	stops := LoadStops("./resources/stops.json")
-	routeMap := LoadPaths("./resources/to-graph.json")
-	rt, pointsMap := createLatLngTree(stops)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stops, rt, pointsMap, routeMap))
+	stopMap := LoadStops("./resources/stops.json")
+	toRouteMap := LoadPaths("./resources/to-graph.json")
+	fromRouteMap := LoadPaths("./resources/from-graph.json")
+	rt, pointsMap := createLatLngTree(stopMap)
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap))
 	initServer(r)
 }
 
@@ -40,10 +41,10 @@ func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
 }
 
-func createLatLngTree(stops []Stop) (*rtreego.Rtree, PointsMap) {
+func createLatLngTree(stopMap StopMap) (*rtreego.Rtree, PointsMap) {
 	rt := rtreego.NewTree(2, 25, 50)
 	points := []RTreePoint{}
-	for _, stop := range stops {
+	for _, stop := range stopMap {
 		points = append(points, RTreePoint{rtreego.Point{stop.Location.Latitude, stop.Location.Longitude}, stop})
 	}
 	pointsMap := make(PointsMap)
@@ -102,29 +103,48 @@ func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap
 	return stops
 }
 
-func GetDoubleRouteWholeSigment(fromStop, toStop Stop, routeMap Route) []RouteSegment {
-	neighborsMap, ok := routeMap[fromStop.Name]
-	var routeSegments []RouteSegment
+func GetDoubleRouteWholeSigment(fromStop, toStop Stop, toRouteMap Route, fromRouteMap Route, stopMap StopMap) [][]RouteSegment {
+	routeSegments := [][]RouteSegment{}
+	fromStopNeighborsMap, ok := toRouteMap[fromStop.Name]
 	if !ok {
 		return routeSegments
 	}
-	paths, ok := neighborsMap[toStop.Name]
+	toStopNeighborsMap, ok := fromRouteMap[toStop.Name]
 	if !ok {
 		return routeSegments
 	}
-	for _, path := range paths {
-		routeSegments = append(routeSegments, RouteSegment{
-			FromStop:  fromStop,
-			ToStop:    toStop,
-			RoutePath: path,
-		})
+	for fromStopNeighborName, fromPaths := range fromStopNeighborsMap {
+		toPaths, ok := toStopNeighborsMap[fromStopNeighborName]
+		if !ok {
+			continue
+		}
+		fromStopNeighbor, ok := stopMap[fromStopNeighborName]
+		if !ok {
+			continue
+		}
+		for _, fromPath := range fromPaths {
+			for _, toPath := range toPaths {
+				routeSegments = append(routeSegments, []RouteSegment{
+					RouteSegment{
+						FromStop:  fromStop,
+						ToStop:    fromStopNeighbor,
+						RoutePath: fromPath,
+					},
+					RouteSegment{
+						FromStop:  fromStopNeighbor,
+						ToStop:    toStop,
+						RoutePath: toPath,
+					},
+				})
+			}
+		}
 	}
 	return routeSegments
 }
 
-func GetSingleRouteWholeSigment(fromStop, toStop Stop, routeMap Route) []RouteSegment {
-	neighborsMap, ok := routeMap[fromStop.Name]
+func GetSingleRouteWholeSigment(fromStop, toStop Stop, toRouteMap Route) []RouteSegment {
 	var routeSegments []RouteSegment
+	neighborsMap, ok := toRouteMap[fromStop.Name]
 	if !ok {
 		return routeSegments
 	}
@@ -146,33 +166,35 @@ func GetRouteSegments(segment RouteSegment) []RouteSegment {
 	return []RouteSegment{segment}
 }
 
-func GetRouteJourneys(fromStops, toStops []Stop, routeMap Route) []RouteJourney {
+func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap Route, stopMap StopMap) []RouteJourney {
 	routeJourneys := []RouteJourney{}
 	for _, fromStop := range fromStops {
 		for _, toStop := range toStops {
-			routeWholeSegments := GetSingleRouteWholeSigment(fromStop, toStop, routeMap)
-			if len(routeWholeSegments) > 0 {
-				for _, routeWholeSegment := range routeWholeSegments {
-					routeJourneys = append(routeJourneys, RouteJourney{
-						Segments: GetRouteSegments(routeWholeSegment),
-					})
-				}
-				continue
+			routeWholeSegments := GetSingleRouteWholeSigment(fromStop, toStop, toRouteMap)
+			for _, routeWholeSegment := range routeWholeSegments {
+				routeJourneys = append(routeJourneys, RouteJourney{
+					Segments: GetRouteSegments(routeWholeSegment),
+				})
 			}
-			routeWholeSegments = GetDoubleRouteWholeSigment(fromStop, toStop, routeMap)
-			if len(routeWholeSegments) > 0 {
-				for _, routeWholeSegment := range routeWholeSegments {
-					routeJourneys = append(routeJourneys, RouteJourney{
-						Segments: GetRouteSegments(routeWholeSegment),
-					})
+			routeWholeDoubleSegments := GetDoubleRouteWholeSigment(fromStop, toStop, toRouteMap, fromRouteMap, stopMap)
+			for _, routeWholeDoubleSegment := range routeWholeDoubleSegments {
+				routeSegments := []RouteSegment{}
+				for _, routeWholeSegment := range routeWholeDoubleSegment {
+					routeSegmentParts := GetRouteSegments(routeWholeSegment)
+					for _, routeSegmentPart := range routeSegmentParts {
+						routeSegments = append(routeSegments, routeSegmentPart)
+					}
 				}
+				routeJourneys = append(routeJourneys, RouteJourney{
+					Segments: routeSegments,
+				})
 			}
 		}
 	}
 	return routeJourneys
 }
 
-func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, routeMap Route) http.HandlerFunc {
+func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// w.Header().Set("Access-Control-Allow-Origin", "*")
 		// w.Header().Set("Access-Control-Allow-Headers", "application/json")
@@ -200,7 +222,7 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, rout
 		toPoint := rtreego.Point{lat2, lng2}
 		fromStops := GetNearestStops(rt, fromPoint, pointsMap)
 		toStops := GetNearestStops(rt, toPoint, pointsMap)
-		routes := GetRouteJourneys(fromStops, toStops, routeMap)
+		routes := GetRouteJourneys(fromStops, toStops, toRouteMap, fromRouteMap, stopMap)
 		data, err := json.Marshal(map[string][]RouteJourney{
 			"journeys": routes,
 		})
@@ -222,6 +244,8 @@ type Stop struct {
 	Name     string   `json:"StopPointName"`
 	Location Position `json:"Location"`
 }
+
+type StopMap map[string]Stop
 
 type RoutePath struct {
 	RouteCode string  `json:"route_code"`
@@ -252,7 +276,7 @@ func (fromStop Stop) GetDistance(lat, lng float64) float64 {
 	)
 }
 
-func LoadStops(file string) []Stop {
+func LoadStops(file string) StopMap {
 	configFile, err := os.Open(file)
 	defer configFile.Close()
 	if err != nil {
@@ -261,7 +285,11 @@ func LoadStops(file string) []Stop {
 	jsonParser := json.NewDecoder(configFile)
 	var stops []Stop
 	jsonParser.Decode(&stops)
-	return stops
+	stopMap := make(StopMap)
+	for _, stop := range stops {
+		stopMap[stop.Name] = stop
+	}
+	return stopMap
 }
 
 func LoadPaths(file string) Route {
