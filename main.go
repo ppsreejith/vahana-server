@@ -29,7 +29,7 @@ type RTreePoint struct {
 	stop     Stop
 }
 
-const tol = 2
+const tol = 0.000001
 
 func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
@@ -78,7 +78,7 @@ func GetLatLngFromParams(latlngStr string) (error, float64, float64) {
 }
 
 func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap) []RTreePoint {
-	results := rt.NearestNeighbors(3, point)
+	results := rt.NearestNeighbors(5, point)
 	var resultPoints []RTreePoint
 	for _, result := range results {
 		rect := result.Bounds()
@@ -109,11 +109,11 @@ func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap) http
 		toPoint := rtreego.Point{lat2, lng2}
 		fromStops := GetNearestStops(rt, fromPoint, pointsMap)
 		toStops := GetNearestStops(rt, toPoint, pointsMap)
-		data, err := json.Marshal(map[string]string{
-			"from stop 1": fromStops[0].stop.String(),
-			"from stop 2": fromStops[1].stop.String(),
-			"to stop 1":   toStops[0].stop.String(),
-			"to stop 2":   toStops[1].stop.String(),
+		data, err := json.Marshal(map[string]Stop{
+			"from stop 1": fromStops[0].stop,
+			"from stop 2": fromStops[1].stop,
+			"to stop 1":   toStops[0].stop,
+			"to stop 2":   toStops[1].stop,
 		})
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
@@ -132,10 +132,6 @@ type Position struct {
 type Stop struct {
 	Name     string   `json:"StopPointName"`
 	Location Position `json:"Location"`
-}
-
-func (s Stop) String() string {
-	return s.Name
 }
 
 func LoadStops(file string) []Stop {
