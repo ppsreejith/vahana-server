@@ -22,9 +22,9 @@ type PointsMap = map[string]RTreePoint
 func main() {
 	r := mux.NewRouter()
 	stops := LoadStops("./resources/stops.json")
-	route := LoadPaths("./resources/to-graph.json")
+	routeMap := LoadPaths("./resources/to-graph.json")
 	rt, pointsMap := createLatLngTree(stops)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stops, rt, pointsMap, route))
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stops, rt, pointsMap, routeMap))
 	initServer(r)
 }
 
@@ -102,12 +102,13 @@ func GetNearestStops(rt *rtreego.Rtree, point rtreego.Point, pointsMap PointsMap
 	return stops
 }
 
-func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, route Route) http.HandlerFunc {
+func GetRoutesHandler(stops []Stop, rt *rtreego.Rtree, pointsMap PointsMap, routeMap Route) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Headers", "application/json")
 		w.Header().Set("Access-Control-Allow-Credentials", "true")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		w.Header().Set("Content-Type", "application/json")
 		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 		params := mux.Vars(r)
 		latlngStr := params["latlng1"]
