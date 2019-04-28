@@ -42,7 +42,7 @@ type RTreePoint struct {
 
 const tol = 0.001
 const MAX_STOPS = 10
-const MAX_JOURNEYS = 20
+const MAX_JOURNEYS = 50
 
 func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
