@@ -223,11 +223,15 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 					totalDistance = totalDistance + segment.RoutePath.Distance
 				}
 				_, timeToArrive := timetable.GetTimeOfArrival(vehicleTime.Vehicle, routeWholeSegment.ToStop.Name)
+				journeyTime := timeToArrive - GetTime()
+				if journeyTime < 0 {
+					journeyTime = -journeyTime
+				}
 				routeJourneys = append(routeJourneys, RouteJourney{
 					Segments:      segments,
 					TotalDistance: totalDistance,
 					Vehicles:      []VehicleTime{*vehicleTime},
-					TotalTime:     timeToArrive - GetTime(),
+					TotalTime:     journeyTime,
 				})
 			}
 			routeWholeDoubleSegments := GetDoubleRouteWholeSigment(fromStop, toStop, toRouteMap, fromRouteMap, stopMap)
@@ -260,11 +264,15 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 				for _, segment := range routeSegments {
 					totalDistance = totalDistance + segment.RoutePath.Distance
 				}
+				journeyTime := time - GetTime()
+				if journeyTime < 0 {
+					journeyTime = -journeyTime
+				}
 				routeJourneys = append(routeJourneys, RouteJourney{
 					Segments:      routeSegments,
 					TotalDistance: totalDistance,
 					Vehicles:      vehicleTimes,
-					TotalTime:     time - GetTime(),
+					TotalTime:     journeyTime,
 				})
 			}
 		}
