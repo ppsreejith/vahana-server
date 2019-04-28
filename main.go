@@ -222,10 +222,12 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 				for _, segment := range segments {
 					totalDistance = totalDistance + segment.RoutePath.Distance
 				}
+				_, timeToArrive := timetable.GetTimeOfArrival(vehicleTime.Vehicle, routeWholeSegment.ToStop.Name)
 				routeJourneys = append(routeJourneys, RouteJourney{
 					Segments:      segments,
 					TotalDistance: totalDistance,
 					Vehicles:      []VehicleTime{*vehicleTime},
+					TotalTime:     timeToArrive - GetTime(),
 				})
 			}
 			routeWholeDoubleSegments := GetDoubleRouteWholeSigment(fromStop, toStop, toRouteMap, fromRouteMap, stopMap)
@@ -262,12 +264,13 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 					Segments:      routeSegments,
 					TotalDistance: totalDistance,
 					Vehicles:      vehicleTimes,
+					TotalTime:     time - GetTime(),
 				})
 			}
 		}
 	}
 	sort.Slice(routeJourneys, func(i, j int) bool {
-		return routeJourneys[i].TotalDistance < routeJourneys[j].TotalDistance
+		return routeJourneys[i].TotalTime < routeJourneys[j].TotalTime
 	})
 	if len(routeJourneys) > MAX_JOURNEYS {
 		return routeJourneys[:MAX_JOURNEYS]
@@ -341,6 +344,7 @@ type RouteJourney struct {
 	TotalDistance       float64
 	OverallComfortLevel float64
 	Vehicles            []VehicleTime
+	TotalTime           int
 }
 
 type VehicleInfo struct {
