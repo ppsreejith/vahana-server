@@ -26,10 +26,11 @@ func main() {
 	fromRouteMap := LoadPaths("./resources/from-graph.json")
 	routeStopMap := LoadRoutes("./resources/routes.json")
 	timetable := LoadTimetable("./resources/timetable.json")
+	invertedTimetable := LoadInvertedTimetable("./resources/inverted-timetable.json")
 	var vehicleMonitoring VehicleMonitoring
 	vehicleMonitoring.GetData()
 	rt, pointsMap := createLatLngTree(stopMap)
-	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap, timetable, vehicleMonitoring))
+	r.HandleFunc("/routes/{latlng1}/{latlng2}", GetRoutesHandler(stopMap, rt, pointsMap, toRouteMap, fromRouteMap, routeStopMap, timetable, invertedTimetable, vehicleMonitoring))
 	initServer(r)
 }
 
@@ -246,7 +247,7 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 	return routeJourneys
 }
 
-func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap, timetable BusStopArrival, vehicleMonitoring VehicleMonitoring) http.HandlerFunc {
+func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, toRouteMap Route, fromRouteMap Route, routeStopMap RouteStopMap, timetable BusStopArrival, invertedTimetable VehicleAtStopAtRoute, vehicleMonitoring VehicleMonitoring) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		params := mux.Vars(r)
 		latlngStr := params["latlng1"]
@@ -313,6 +314,14 @@ type RouteJourney struct {
 	OverallComfortLevel float64
 }
 
+type VehicleInfo struct {
+}
+
+type PlannedRouteJourney struct {
+	RouteJourney
+	VehicleInfo VehicleInfo
+}
+
 type RouteStopMap map[string][]Stop
 
 type RouteMap map[string][]RoutePath
@@ -320,6 +329,13 @@ type Route map[string]RouteMap
 
 type StopArrival map[string]int
 type BusStopArrival map[string]StopArrival
+
+type VehicleTime struct {
+	Time    int
+	Vehicle string
+}
+type VehicleAtStop map[string]VehicleTime
+type VehicleAtStopAtRoute map[string]VehicleAtStop
 
 type Vehicle struct {
 	Location    Position `json:"location"`
@@ -401,4 +417,16 @@ func LoadTimetable(file string) BusStopArrival {
 	var busStopArrival BusStopArrival
 	jsonParser.Decode(&busStopArrival)
 	return busStopArrival
+}
+
+func LoadInvertedTimetable(file string) VehicleAtStopAtRoute {
+	configFile, err := os.Open(file)
+	defer configFile.Close()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	jsonParser := json.NewDecoder(configFile)
+	var vehicleAtStopAtRoute VehicleAtStopAtRoute
+	jsonParser.Decode(&vehicleAtStopAtRoute)
+	return vehicleAtStopAtRoute
 }
