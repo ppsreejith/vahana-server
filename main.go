@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"net/http"
@@ -45,6 +46,10 @@ const MAX_JOURNEYS = 20
 
 func (s RTreePoint) Bounds() *rtreego.Rect {
 	return s.location.ToRect(tol)
+}
+
+func GetTime() int {
+	return 1556460882000
 }
 
 func createLatLngTree(stopMap StopMap) (*rtreego.Rtree, PointsMap) {
@@ -202,12 +207,16 @@ func GetRouteSegments(segment RouteSegment, routeStopMap RouteStopMap) []RouteSe
 	return routeSegments
 }
 
-func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap Route, stopMap StopMap, routeStopMap RouteStopMap) []RouteJourney {
+func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap Route, stopMap StopMap, routeStopMap RouteStopMap, timetable BusStopArrival, invertedTimetable VehicleAtStopAtRoute) []RouteJourney {
 	routeJourneys := []RouteJourney{}
 	for _, fromStop := range fromStops {
 		for _, toStop := range toStops {
 			routeWholeSegments := GetSingleRouteWholeSigment(fromStop, toStop, toRouteMap)
 			for _, routeWholeSegment := range routeWholeSegments {
+				err, vehicleTime := invertedTimetable.GetNearestVehicle(routeWholeSegment.FromStop.Name, routeWholeSegment.RoutePath.RouteCode, GetTime())
+				if err != nil {
+					continue
+				}
 				segments := GetRouteSegments(routeWholeSegment, routeStopMap)
 				totalDistance := float64(0)
 				for _, segment := range segments {
@@ -216,16 +225,34 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 				routeJourneys = append(routeJourneys, RouteJourney{
 					Segments:      segments,
 					TotalDistance: totalDistance,
+					Vehicles:      []VehicleTime{*vehicleTime},
 				})
 			}
 			routeWholeDoubleSegments := GetDoubleRouteWholeSigment(fromStop, toStop, toRouteMap, fromRouteMap, stopMap)
 			for _, routeWholeDoubleSegment := range routeWholeDoubleSegments {
 				routeSegments := []RouteSegment{}
+				var erroredOut bool
+				vehicleTimes := []VehicleTime{}
+				time := GetTime()
 				for _, routeWholeSegment := range routeWholeDoubleSegment {
+					err, vehicleTime := invertedTimetable.GetNearestVehicle(routeWholeSegment.FromStop.Name, routeWholeSegment.RoutePath.RouteCode, time)
+					if err != nil || erroredOut {
+						erroredOut = true
+						continue
+					}
+					err, time = timetable.GetTimeOfArrival(vehicleTime.Vehicle, routeWholeSegment.ToStop.Name)
+					if err != nil || erroredOut {
+						erroredOut = true
+						continue
+					}
+					vehicleTimes = append(vehicleTimes, *vehicleTime)
 					routeSegmentParts := GetRouteSegments(routeWholeSegment, routeStopMap)
 					for _, routeSegmentPart := range routeSegmentParts {
 						routeSegments = append(routeSegments, routeSegmentPart)
 					}
+				}
+				if erroredOut {
+					continue
 				}
 				totalDistance := float64(0)
 				for _, segment := range routeSegments {
@@ -234,6 +261,7 @@ func GetRouteJourneys(fromStops, toStops []Stop, toRouteMap Route, fromRouteMap 
 				routeJourneys = append(routeJourneys, RouteJourney{
 					Segments:      routeSegments,
 					TotalDistance: totalDistance,
+					Vehicles:      vehicleTimes,
 				})
 			}
 		}
@@ -269,7 +297,7 @@ func GetRoutesHandler(stopMap StopMap, rt *rtreego.Rtree, pointsMap PointsMap, t
 		toPoint := rtreego.Point{lat2, lng2}
 		fromStops := GetNearestStops(rt, fromPoint, pointsMap)
 		toStops := GetNearestStops(rt, toPoint, pointsMap)
-		routes := GetRouteJourneys(fromStops, toStops, toRouteMap, fromRouteMap, stopMap, routeStopMap)
+		routes := GetRouteJourneys(fromStops, toStops, toRouteMap, fromRouteMap, stopMap, routeStopMap, timetable, invertedTimetable)
 		data, err := json.Marshal(map[string][]RouteJourney{
 			"journeys": routes,
 		})
@@ -312,14 +340,10 @@ type RouteJourney struct {
 	Segments            []RouteSegment
 	TotalDistance       float64
 	OverallComfortLevel float64
+	Vehicles            []VehicleTime
 }
 
 type VehicleInfo struct {
-}
-
-type PlannedRouteJourney struct {
-	RouteJourney
-	VehicleInfo VehicleInfo
 }
 
 type RouteStopMap map[string][]Stop
@@ -330,12 +354,44 @@ type Route map[string]RouteMap
 type StopArrival map[string]int
 type BusStopArrival map[string]StopArrival
 
+func (b BusStopArrival) GetTimeOfArrival(vehicle string, stop string) (error, int) {
+	err := errors.New("Couldn't find")
+	stopMap, ok := b[vehicle]
+	if !ok {
+		return err, 0
+	}
+	timeOfArrival, ok := stopMap[stop]
+	if !ok {
+		return err, 0
+	}
+	return nil, timeOfArrival
+}
+
 type VehicleTime struct {
 	Time    int
 	Vehicle string
 }
-type VehicleAtStop map[string]VehicleTime
+type VehicleAtStop map[string][]VehicleTime
 type VehicleAtStopAtRoute map[string]VehicleAtStop
+
+func (v VehicleAtStopAtRoute) GetNearestVehicle(stop string, route string, time int) (error, *VehicleTime) {
+	stopMap, ok := v[route]
+	err := errors.New("Couldn't find")
+	if !ok {
+		return err, nil
+	}
+	vehicleTimes, ok := stopMap[stop]
+	if !ok {
+		return err, nil
+	}
+	index := sort.Search(len(vehicleTimes), func(index int) bool {
+		return vehicleTimes[index].Time > time
+	})
+	if index == len(vehicleTimes) {
+		return err, nil
+	}
+	return nil, &vehicleTimes[index]
+}
 
 type Vehicle struct {
 	Location    Position `json:"location"`
@@ -428,5 +484,12 @@ func LoadInvertedTimetable(file string) VehicleAtStopAtRoute {
 	jsonParser := json.NewDecoder(configFile)
 	var vehicleAtStopAtRoute VehicleAtStopAtRoute
 	jsonParser.Decode(&vehicleAtStopAtRoute)
+	for _, stopMap := range vehicleAtStopAtRoute {
+		for _, vehicleTimes := range stopMap {
+			sort.Slice(vehicleTimes, func(i, j int) bool {
+				return vehicleTimes[i].Time < vehicleTimes[j].Time
+			})
+		}
+	}
 	return vehicleAtStopAtRoute
 }
